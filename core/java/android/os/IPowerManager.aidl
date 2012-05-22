@@ -24,6 +24,7 @@ interface IPowerManager
 {
     void acquireWakeLock(int flags, IBinder lock, String tag, in WorkSource ws);
     void updateWakeLockWorkSource(IBinder lock, in WorkSource ws);
+    void goToDeepSleep(boolean mode, long time);
     void goToSleep(long time);
     void goToSleepWithReason(long time, int reason);
     void releaseWakeLock(IBinder lock, int flags);

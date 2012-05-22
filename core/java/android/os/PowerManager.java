@@ -202,7 +202,7 @@ public class PowerManager
                 release();
             }
         };
-	
+
         int mFlags;
         String mTag;
         IBinder mToken;
@@ -415,6 +415,14 @@ public class PowerManager
     {
         try {
             mService.userActivity(when, noChangeLights);
+        } catch (RemoteException e) {
+        }
+    }
+
+    public void goToDeepSleep(boolean paramBoolean, long time) 
+    {
+        try {
+            mService.goToDeepSleep(paramBoolean, time);
         } catch (RemoteException e) {
         }
     }
